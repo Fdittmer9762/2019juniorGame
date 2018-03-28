@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 92255328891313528}
   - component: {fileID: 124278988763944582}
   - component: {fileID: 81267855031517438}
-  - component: {fileID: 114712221678419874}
+  - component: {fileID: 114370250098293364}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1584899573109482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec4c6b429d214a98a6558070acf357f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1472d3825d501461db6bc5e82125aa16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   groundedParameter: IsGrounded
@@ -291,12 +291,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1584899573109482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d28f929942b6d4ee68d5cf52a9a1230f, type: 3}
+  m_Script: {fileID: 11500000, guid: 43a42d51527974d25847a582e9ad0db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: ea28902e7ebf34f19ba78d3a477f338b, type: 2}
-  damageTrigger: TakeDamage
-  healthPara: Damage
+  character: {fileID: 11400000, guid: a60996807af354aebad932ba5140c996, type: 2}
+--- !u!114 &114370250098293364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1053407927561698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743798d0cd6ab9f45b62986e4bd14c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBody: {fileID: 4353546409328676}
+  mouseSensitivity: 4
 --- !u!114 &114548529326490274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -305,10 +316,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1584899573109482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68bcaebb34d4c4eafa6b3babcb29c5d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a4ff0ad6fb02488e93edc08d250197c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: ea28902e7ebf34f19ba78d3a477f338b, type: 2}
+  currentHealth: 0
+  elementManager: {fileID: 0}
 --- !u!114 &114551275461108200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,15 +329,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1584899573109482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe98ac2626acf4761898ec38ab8a89a3, type: 3}
+  m_Script: {fileID: 11500000, guid: fb8f1452b9995ed4ba3b9967e26d8f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: e1a6c4f55d4ad4d6babf3efc4f99e8e1, type: 2}
+  Event: {fileID: 11400000, guid: 4d2f227a065344158aa3356b64496fa6, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114114476220290898}
-        m_MethodName: CheckGrounded
+      - m_Target: {fileID: 114343563112399364}
+        m_MethodName: CCMove
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -345,15 +357,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1584899573109482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe98ac2626acf4761898ec38ab8a89a3, type: 3}
+  m_Script: {fileID: 11500000, guid: fb8f1452b9995ed4ba3b9967e26d8f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: a182a8c12d6ff4c3aa173331edd11e49, type: 2}
+  Event: {fileID: 11400000, guid: deed7200801a54c528fd6997224c2137, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114548529326490274}
-        m_MethodName: CCMove
+      - m_Target: {fileID: 114114476220290898}
+        m_MethodName: CheckGrounded
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -365,19 +377,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114712221678419874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1053407927561698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e522513e8374276b4002e94c6c923c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerBody: {fileID: 4353546409328676}
-  mouseSensitivity: 4
 --- !u!124 &124278988763944582
 Behaviour:
   m_ObjectHideFlags: 1
