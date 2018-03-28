@@ -147,7 +147,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114086314973993104, guid: 9e1e275b3ee1f456eb99fec16e0e8e7b, type: 2}
+    - {fileID: 114008961832557510, guid: 9e1e275b3ee1f456eb99fec16e0e8e7b, type: 2}
+    - {fileID: 114807609387897538, guid: 9e1e275b3ee1f456eb99fec16e0e8e7b, type: 2}
+    - {fileID: 114173829128945128, guid: 9e1e275b3ee1f456eb99fec16e0e8e7b, type: 2}
+    - {fileID: 114917612944219752, guid: 9e1e275b3ee1f456eb99fec16e0e8e7b, type: 2}
+    - {fileID: 114188561907393130, guid: 9e1e275b3ee1f456eb99fec16e0e8e7b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9e1e275b3ee1f456eb99fec16e0e8e7b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &67899091
@@ -229,11 +235,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 150081805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec8741b3f4d8476ea4f63a4c1b27c58, type: 3}
+  m_Script: {fileID: 11500000, guid: 62316e4356dd340e3b530710ef9736c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
-  KB: 5
+  baseDamage: 0
+  baseKnockBack: 0
 --- !u!54 &150081807
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -262,7 +268,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fe88d91c6dc2c44efa109105a94c941d, type: 2}
+  - {fileID: 2100000, guid: 1f214bc7ea84e48fcb4d57e0dea1592d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -421,9 +427,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0b769b14c7deb42f4a20cf73b2f799a4, type: 2}
   currentRound: {fileID: 11400000, guid: fa6917af1a9aa4f7a929dc1bcaf0024b, type: 2}
   defaultEnemyPoolSize: 20
-  smallEnemySO: {fileID: 11400000, guid: 067d5b932c0324f47bdaee1d40902fa8, type: 2}
-  medEnemySO: {fileID: 11400000, guid: 5694b0fb3fb2641f69f6e51a12f8c436, type: 2}
-  bigEnemySO: {fileID: 11400000, guid: b7b09ddea470b435582b4839fb9dbc3e, type: 2}
+  smallEnemySO: {fileID: 0}
+  medEnemySO: {fileID: 0}
+  bigEnemySO: {fileID: 0}
   smallEnemies: []
   medEnemies: []
   bigEnemies: []
@@ -482,7 +488,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 31cca754327fb41f9837f63682c979f7, type: 2}
+  - {fileID: 2100000, guid: 3f8a6fb8cb342294ca7294453d251824, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -520,6 +526,109 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 868300631}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &892093432 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1855855273853316, guid: 9e1e275b3ee1f456eb99fec16e0e8e7b,
+    type: 2}
+  m_PrefabInternal: {fileID: 58296989}
+--- !u!114 &892093433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 892093432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8f1452b9995ed4ba3b9967e26d8f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: deed7200801a54c528fd6997224c2137, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 892093435}
+        m_MethodName: CheckGrounded
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &892093434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 892093432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8f1452b9995ed4ba3b9967e26d8f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4d2f227a065344158aa3356b64496fa6, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 892093436}
+        m_MethodName: CCMove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &892093435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 892093432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1472d3825d501461db6bc5e82125aa16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundedParameter: IsGrounded
+--- !u!114 &892093436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 892093432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a42d51527974d25847a582e9ad0db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: a60996807af354aebad932ba5140c996, type: 2}
+--- !u!114 &892093437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 892093432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4ff0ad6fb02488e93edc08d250197c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  elementManager: {fileID: 0}
+--- !u!4 &892093442 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4354324355334164, guid: 9e1e275b3ee1f456eb99fec16e0e8e7b,
+    type: 2}
+  m_PrefabInternal: {fileID: 58296989}
 --- !u!1 &1069005411
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,23 +670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe98ac2626acf4761898ec38ab8a89a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 26c6cfea8003b4282b99ee6b6bb34c7d, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1069005414}
-        m_MethodName: PullExplosive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &1069005414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,7 +683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 1261579323590778, guid: 8055854185c42495e9239d7a8cb3aa8c,
     type: 2}
-  playerLoc: {fileID: 0}
+  playerLoc: {fileID: 892093442}
 --- !u!1 &1120632370
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +715,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 31cca754327fb41f9837f63682c979f7, type: 2}
+  - {fileID: 2100000, guid: 3f8a6fb8cb342294ca7294453d251824, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -705,7 +797,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 31cca754327fb41f9837f63682c979f7, type: 2}
+  - {fileID: 2100000, guid: 3f8a6fb8cb342294ca7294453d251824, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -837,6 +929,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1741265332 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1792988120503382, guid: 9e1e275b3ee1f456eb99fec16e0e8e7b,
+    type: 2}
+  m_PrefabInternal: {fileID: 58296989}
+--- !u!114 &1741265334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1741265332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743798d0cd6ab9f45b62986e4bd14c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBody: {fileID: 892093442}
+  mouseSensitivity: 4
 --- !u!1 &1821051750
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +978,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 31cca754327fb41f9837f63682c979f7, type: 2}
+  - {fileID: 2100000, guid: 3f8a6fb8cb342294ca7294453d251824, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
